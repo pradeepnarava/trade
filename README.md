@@ -1,8 +1,8 @@
-# Legolas
+# TradeR
 
-[See it live](https://legolas-robinhood-clone.herokuapp.com/)
 
-Legolas, a Robinhood clone, is an investing app where you can try out a crazy
+
+TradeR is an investing app where you can try out a crazy
 investing strategy without putting real money on the line. Rails and Postgres
 power the backend, while React and Rails handle the frontend.
 
