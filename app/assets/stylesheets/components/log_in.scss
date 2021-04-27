@@ -1,0 +1,66 @@
+.log-in {
+  background: $light-background;
+  display: flex;
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 3;
+  .form-half {
+    align-items: center;
+    display: flex;
+    margin-left: 52px;
+    width: 412px;
+    section {
+      flex: 1;
+    }
+  }
+  .image {
+    background-image: image-url("log_in.png");
+    background-position: center;
+    background-size: cover;
+    flex-basis: 50%;
+  }
+  h1 {
+    font-size: 26px;
+    font-weight: 500;
+    margin-bottom: 16px;
+  }
+  input {
+    font-size: 13px;
+  }
+  label {
+    font-weight: 300;
+    margin: 0;
+    div {
+      font-size: 13px;
+      padding: 9px 0;
+    }
+    input {
+      padding: 15px 20px;
+    }
+    &:last-of-type {
+      margin-bottom: 60px;
+    }
+  }
+  input[type="submit"] {
+    line-height: 48px;
+    padding: 0;
+    text-align: center;
+    width: 140px;
+  }
+  .buttons {
+    display: flex;
+    :first-child {
+      margin-right: 20px;
+    }
+    input {
+      margin: 0;
+    }
+  }
+}
+
+.dark .log-in {
+  background: $dark-background;
+}

@@ -1,0 +1,90 @@
+.stock-form {
+  label, .form-group {
+    -webkit-appearance: none;
+    align-items: center;
+    display: flex;
+    font-size: 13px;
+    height: 36px;
+    justify-content: space-between;
+    margin: 0;
+    padding: 6px 0;
+    &.bold {
+      font-weight: 500;
+    }
+    &.cost {
+      border-top: 1px solid $light-border;
+      .dark & {
+        border-top-color: $dark-border;
+      }
+    }
+    input {
+      font-size: 13px;
+      font-weight: 400;
+      height: 36px;
+      padding: 0 13px;
+      width: 82px;
+      &[type="number"] {
+        text-align: right;
+        &::-webkit-inner-spin-button,
+        &::-webkit-outer-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+      }
+    }
+  }
+  input[type="submit"] {
+    color: $dark-background;
+    font-size: 13px;
+    font-weight: 500;
+    height: 48px;
+    padding: 0 32px;
+    &:hover, &:active {
+      background: $light-green;
+      .red & {
+        background: $light-red;
+      }
+    }
+  }
+}
+
+.stocks a {
+  align-items: center;
+  color: $light-foreground;
+  display: flex;
+  height: 60px;
+  justify-content: space-between;
+  margin: 0 -24px;
+  padding: 0 24px;
+  text-decoration: none;
+  .dark & {
+    color: $dark-foreground;
+  }
+  &:hover {
+    background: $light-dark-background;
+    .dark & {
+      background: $dark-dark-background;
+    }
+  }
+  h4 {
+    font-size: 13px;
+    font-weight: 500;
+    width: 72px;
+  }
+  .shares {
+    font-size: 13px;
+  }
+  .test {
+    background: deeppink;
+    height: 16px;
+    width: 33.33px;
+  }
+  .price-preview {
+    text-align: right;
+    width: 72px;
+  }
+}
+
+.stock-loader {
+  margin: auto;
+}

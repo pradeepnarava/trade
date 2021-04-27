@@ -1,0 +1,218 @@
+@import "colors";
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+}
+
+body.light {
+  background: $light-background;
+  color: $light-foreground;
+}
+
+body.dark {
+  background: $dark-background;
+  color: $dark-foreground;
+}
+
+.app {
+  /*margin: auto;*/
+  max-width: 1024px;
+}
+
+main {
+  box-sizing: border-box;
+  margin-top: 64px;
+  min-height: calc(100vh - 64px);
+  padding-top: 36px;
+  padding-bottom: 24px;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 500;
+}
+
+h1 {
+  font-size: 36px;
+  margin: 0;
+}
+
+h2 {
+  // border-bottom: 1px solid $light-border;
+  font-size: 26px;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  .dark & {
+    // border-bottom: 1px solid $dark-border;
+  }
+}
+
+p {
+  font-weight: 400;
+  line-height: 1.375;
+}
+
+label {
+  display: block;
+  margin: 24px 0;
+}
+
+input, button, .button {
+  color: inherit;
+  border-radius: 4px;
+  box-sizing: border-box;
+  display: block;
+  font-size: 18px;
+  padding: 10px 16px 10px 18px;
+  width: 100%;
+  &[type="text"],
+  &[type="email"],
+  &[type="password"],
+  &[type="number"] {
+    background: transparent;
+    border: 1px solid rgb(177, 191, 196);
+    font-weight: 300;
+    outline: none;
+    transition: border-color ease-in-out .15s;
+    &:focus {
+      border-color: $green;
+      .red & {
+        border-color: $red;
+      }
+    }
+    .hoverable-inputs & {
+      background: $light-dark-background;
+      border-color: $light-dark-background;
+      .dark & {
+        background: $dark-dark-background;
+        border-color: $dark-dark-background;
+      }
+      &:hover, &:active {
+        background: $light-background;
+        border-color: $light-placeholder;
+        .dark & {
+          border-color: $dark-placeholder;
+        }
+      }
+      .dark &:hover, .dark &:active {
+        background: $dark-background;
+      }
+      &:focus {
+        background: $light-background;
+        border-color: $green;
+        .dark & {
+          background: $dark-background;
+          border-color: $green;
+        }
+        .red & {
+          border-color: $red;
+        }
+      }
+      &::placeholder {
+        color: $light-placeholder;
+        .dark & {
+          color: $dark-placeholder;
+        }
+      }
+    }
+  }
+}
+
+input[type="submit"], button, .button {
+  background: $green;
+  border: none;
+  color: white;
+  margin: 24px 0;
+  &:hover, &:active {
+    background: #1aa278;
+  }
+  .red & {
+    background: $red;
+  }
+}
+
+input[type="submit"], button, .button, a {
+  cursor: pointer;
+}
+
+::placeholder {
+  color: rgb(177, 191, 196);
+}
+
+.errors {
+  color: $red;
+  font-weight: 400;
+}
+
+.error {
+  align-items: center;
+  display: flex;
+  font-size: 13px;
+  font-weight: 500;
+  margin-top: 10px;
+  svg {
+    margin-right: 8px;
+  }
+}
+
+.error-svg {
+  fill: $light-foreground;
+  .dark & {
+    fill: $dark-foreground;
+  }
+  text {
+    fill: $light-background;
+    .dark & {
+      fill: $dark-background;
+    }
+  }
+}
+
+.credit a {
+  color: $light-foreground;
+  font-size: 13px;
+  font-weight: 300px;
+  text-decoration: none;
+  .dark & {
+    color: $dark-foreground;
+  }
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+.full-screen {
+  align-items: center;
+  background: $light-background;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 1;
+  .dark & {
+    background: $dark-background;
+  }
+}
+
+@import "header";
+@import "page";
+@import "components/log_in";
+@import "components/sign_up";
+@import "components/stock";
+@import "components/splash";
+@import "components/graph";
+@import "components/news";
+@import "components/pie_charts";

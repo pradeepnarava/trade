@@ -1,0 +1,195 @@
+header {
+  background: $light-background;
+  height: 50px;
+  left: 0;
+  overflow: visible;
+  padding-top: 14px;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 2;
+  display: flex;
+  .dark & {
+    background: $dark-background;
+  }
+}
+
+.search-container {
+  // margin: auto;
+  // width: 1024px;
+}
+
+.logo {
+  color: inherit;
+  fill: currentColor;
+  padding: 0px 24px;
+  // left: 48px;
+  // position: absolute;
+  // top: 6px;
+  transition: color 0.3s ease-out 0s;
+}
+
+.logo:hover {
+  color: $green;
+  .red & {
+    color: $red;
+  }
+}
+
+.navLogoStar {
+  display: none;
+}
+
+.search-bar {
+  background: $light-background;
+  border: 1px solid $light-border;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 13px;
+  padding: 1px 0 1px 0;
+  position: relative;
+  transition: border-color .15s ease-out, box-shadow .15s ease-out;
+  width: 478px;
+  z-index: 5;
+  .dark & {
+    border: 1px solid $dark-border;
+  }
+  a {
+    color: $light-foreground;
+    text-decoration: none;
+  }
+  .dark & a {
+    color: $dark-foreground;
+  }
+  ::placeholder {
+    color: $light-placeholder;
+    .dark & {
+      color: $dark-placeholder;
+    }
+  }
+  & ::placeholder {
+    transition: color .15s ease-out;
+  }
+  .search-icon {
+    fill: $light-placeholder;
+    left: 24px;
+    position: absolute;
+    top: 9px;
+    transition: fill .15s ease-out;
+    .dark & {
+      fill: $dark-placeholder;
+    }
+  }
+  input {
+    border: none;
+    font-size: inherit;
+    line-height: 34px;
+    outline: none;
+    padding: 0 24px 0 52px;
+    width: 100%;
+  }
+  &:hover, &.focus {
+    border-color: $light-background;
+    box-shadow: 0 0 4px 1px $small-shadow, 0 3px 24px $light-shadow;
+    .dark & {
+      box-shadow: 0 0 4px 1px $small-shadow, 0 3px 24px $dark-shadow;
+    }
+    & ::placeholder {
+      color: $light-foreground;
+      .dark & {
+        color: $dark-foreground;
+      }
+    }
+    .search-icon {
+      fill: $light-foreground;
+      .dark & {
+        fill: $dark-foreground;
+      }
+    }
+  }
+  ul {
+    display: none;
+    font-size: 13px;
+    font-weight: 500;
+    list-style: none;
+    margin: 0;
+    margin-top: 12px;
+    padding: 0 24px 24px 24px;
+    .symbol {
+      display: inline-block;
+      width: 75px;
+    }
+    li {
+      line-height: 28px;
+    }
+  }
+  &.focus {
+    ul {
+      display: block;
+    }
+  }
+  h4 {
+    color: $light-placeholder;
+    margin-bottom: 12px;
+    .dark & {
+      color: $dark-placeholder;
+    }
+  }
+  .matching {
+    color: $green;
+    .red & {
+      color: $red;
+    }
+  }
+}
+
+.dark .search-bar {
+  background: $dark-background;
+  &:hover, &.focus {
+    border-color: $dark-background;
+  }
+}
+
+nav {
+  position: absolute;
+  right: 48px;
+  top: 0;
+  ul {
+    display: flex;
+    line-height: 64px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    li {
+      margin-right: 33px;
+    }
+    li:last-child {
+      margin-right: 0;
+    }
+  }
+  a, button, .button {
+    border: none;
+    color: $light-foreground;
+    display: inline;
+    font-size: 13px;
+    font-weight: 500;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    &:hover {
+      color: $green;
+      .red & {
+        color: $red;
+      }
+    }
+  }
+  .dark & a, .dark & button, .dark & .button {
+    color: $dark-foreground;
+    &:hover {
+      color: $green;
+      .red & {
+        color: $red;
+      }
+    }
+  }
+}
